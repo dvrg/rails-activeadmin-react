@@ -1,24 +1,33 @@
-# README
+# Rails + Active Admin + React
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Demo Link](https://safe-shelf-95481.herokuapp.com/)
 
-Things you may want to cover:
+This repository inspired by [Heroku Blog](https://blog.heroku.com/a-rock-solid-modern-web-stack)
 
-* Ruby version
+## Getting Started:
 
-* System dependencies
+---
 
-* Configuration
+```
+git clone https://github.com/dvrg/rails-activeadmin-react.git
+cd rails-activeadmin-react
+bundle
+cd client
+npm install
+cd ..
+rake db:migrate
+rake db:seed
+rake start
+```
 
-* Database creation
+For deploy in heroku
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+heroku apps:create
+heroku buildpacks:add heroku/nodejs --index 1
+heroku buildpacks:add heroku/ruby --index 2
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
+heroku open
+```
